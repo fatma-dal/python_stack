@@ -29,15 +29,20 @@ class user:
         else :
             print("Sorry! You don't have enough points.")
 
-
-first_user=user('fatma', 'dal', 'gamil.com',23)
+# instances of the User class
+first_user=user('Alex', 'Morro', 'alex@gamil.com',23)
 print(first_user)
-# implementing the display_info mathod for the first_user object
-first_user.display_info('fatma','dalhoumi','fagmail.com',22)
+second_user=user('Martha', 'Robbert', 'martha@gamil.com',30)
+second_user=user('Alice', 'Mask', 'alice@gamil.com',27)
+
+# implementing the display_info mathod 
+first_user.display_info('Alex', 'Morro', 'alex@gamil.com',23)
+second_user.display_info('Martha', 'Robbert', 'martha@gamil.com',30)
 
 # implementing the enroll()
-first_user.enroll()
+second_user.enroll()
 
 #impelenting the spend_points()
-first_user.spend_points(500)
+first_user.spend_points(50)
+second_user.spend_points(80)
 
