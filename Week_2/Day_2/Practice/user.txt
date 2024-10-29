@@ -1,0 +1,14 @@
+
+#creating 3 users 
+INSERT INTO users (first_name,last_name,email) VALUES ('Joe','mask','joe@gmail.com'),('Alice','ddtt','Alice@gmail.com'),('Martha','bbbb','martha@gmail.com');
+#Retrive all users 
+SELECT * FROM users;
+#Retrive the last user using their id 
+SELECT * FROM users ORDER BY id DESC LIMIT 1;
+#Changing the user with id=3 so their last name is Pancakes
+UPDATE users SET last_name ='Pancakes' where id=3;
+#Delete the user with id=2 from the database
+DELETE FROM users where id=2;
+#Get all the users, sorted by their first name
+SELECT * FROM users ORDER BY first_name ASC;
+SELECT * FROM users ORDER BY first_name DESC;
