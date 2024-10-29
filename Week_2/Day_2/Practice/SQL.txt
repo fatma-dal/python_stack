@@ -1,0 +1,9 @@
+INSERT INTO names (name ) Values ('Bali'),('Ninja');
+# creating a new name 
+INSERT INTO names (name) VALUES ('Aziz');
+# Update record 
+UPDATE  names SET name='joe' where id=1;
+#delet a record name = Bali
+DELETE FROM names WHERE name='Bali';
+
+
