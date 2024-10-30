@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        .container{
+            display:inline-block;
+            margin-left:30px;
+            height:300px;
+            width:350px;
+            /* background-color:#9FC5F8 ; */
+            border : 3px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome!</h1>
+    {% for x in range(0,num):%}
+    <div class="container" style="background-color: {{ backgcolor}}; "></div>
+    {%endfor%}
+</body>
+</html>
