@@ -1,0 +1,15 @@
+.container{
+            
+    display: flex;
+}
+.dark{
+    background-color: #556B2F;
+    height: 70px;
+    width: 70px;
+
+}
+.light{
+    background-color: #FFFFE0;
+    height: 70px;
+    width: 70px;
+}
