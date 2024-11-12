@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <div>
+                <h1>Welcome {{user.first_name}}</h1>
+                <h2>{{recipe.name}}</h2>
+            </div>
+            <div>
+                <a href="/recipes">Back to recipes</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </nav>
+        <p>Posted by :{% if recipe.user_id == user.id %}
+            {{recipe.posted_by}}
+            {% endif %}</p>
+        <div class="recipe_data">
+            <p>Description : {{recipe.description}}</p>
+            <p>Less than 30min preparation : {% if recipe.time==1 %}
+                Yes
+                {% else %}
+                No
+                {% endif %}</p>
+            <p>Instructions : {{recipe.instructions}}</p>
+            <p>Date Made : {{recipe.date}}</p>
+        </div>
+    </div>
+</body>
+
+</html>

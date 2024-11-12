@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New recipe</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<style>
+    * {
+        margin: 0 auto;
+        padding: 0 auto;
+    }
+
+    .container {
+        width: 800px;
+        text-align: center;
+        display: flex; 
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .rd1 .rd2 {
+        display: flex;
+    }
+
+
+
+    button {
+        height: 30px;
+        width: 80px;
+    }
+
+    p {
+        background-color: rgb(210, 114, 114);
+    }
+</style>
+
+<body>
+    <div class="container" >
+        <h1>Add a new recipe</h1>
+        <p style="color: red;">*Description must not be left BLANK*</p>
+        <form action="/create/recipe" method="POST">
+            <div>
+                <label for="name">Recipe name</label>
+                <input type="text" name="name">
+                {% for message in get_flashed_messages(category_filter=["name_validation"]) %}
+                <p>
+                    {{message}}
+                </p>
+                {% endfor %}
+                <label for="description">Recipe description</label>
+                <textarea name="description" id=""></textarea>
+                {% for message in get_flashed_messages(category_filter=["description_validation"]) %}
+                <p>
+                    {{message}}
+                </p>
+                {% endfor %}
+                <label for="">Instructions</label>
+                <textarea name="instructions" id=""></textarea>
+                {% for message in get_flashed_messages(category_filter=["insctructions_validation"]) %}
+                <p>
+                    {{message}}
+                </p>
+                {% endfor %}
+            </div>
+            <div>        
+                
+                <a href="/rescipe">Back to recipes</a>
+                <a href="/logout">Log out</a>
+                <label for="">Date cooked/Mode</label>
+                <input type="date" name="date">
+                <label for="">Less than 30min preparation ?</label> <br>
+                <div class="rd1">
+                    <input type="radio" id="time" name="time" value="1">
+                    <label for="time">Yes</label><br>
+                </div>
+                <div class="rd2">
+                    <input type="radio" name="time" value="0">
+                    <label for="time">No</label><br>
+                </div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+
+    </div>
+</body>
+
+</html>
